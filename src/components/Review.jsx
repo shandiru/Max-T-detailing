@@ -2,16 +2,16 @@ import React from "react";
 
 const testimonials = [
   {
-    name: "Peter Yule",
-    text: "Brilliant service from start to finish. Fast turnaround, clear communication, and the finished plates looked superb.",
+    name: "Daniel Webster",
+    text: "You couldn't get better service. The plates are proper quality, the communication throughout was amazing! Will be using these again and would fully recommend to anyone.",
   },
   {
-    name: "Foysal Ahmed",
-    text: "Always reliable and always great quality. The ordering process was simple and the finish was spot on.",
+    name: "Katie Wood",
+    text: "Came across the website by chance also found out its local great service highly recommend 5 🌟 They look great on my car thank you! Quick turn around!",
   },
   {
-    name: "Aires Silva",
-    text: "5-star service. Easy to deal with, professional throughout, and the plates looked even better in person.",
+    name: "Mark",
+    text: "Purchased these a few days ago, reliable and fast service! Superb quality! They give my X3 that extra wow factor! 100% recommend",
   },
 ];
 
