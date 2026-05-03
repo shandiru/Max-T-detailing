@@ -1,6 +1,6 @@
 export default function PlateBuilderHero() {
   return (
-    <section className="bg-[#0D0D0D] px-6 pb-10 pt-30 text-white sm:pb-0 sm:pt-40">
+    <section className="bg-[#0D0D0D] px-6 pb-10 pt-48 text-white sm:pb-0 sm:pt-40">
       <div className="mx-auto max-w-5xl text-center">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">Interactive builder</p>
         <h1 className="text-4xl font-extrabold uppercase tracking-wide text-white md:text-6xl">
