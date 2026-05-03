@@ -1,73 +1,60 @@
 import React from "react";
-import {
-  FaShieldAlt,
-  FaCheckCircle,
-  FaGem,
-  FaClock,
-  FaClipboardCheck,
-  FaHandshake,
-} from "react-icons/fa";
+import { FaCheckCircle, FaClipboardCheck, FaClock, FaGem, FaHandshake, FaShieldAlt } from "react-icons/fa";
+
+const reasons = [
+  {
+    icon: <FaShieldAlt />,
+    title: "Ceramic Coated Plates",
+    desc: "Every plate comes with a protective ceramic coating as standard, giving your order a crisp premium finish.",
+  },
+  {
+    icon: <FaCheckCircle />,
+    title: "100% Road Legal",
+    desc: "All road-legal plates comply with British Standard BS AU 145e and current DVLA regulations.",
+  },
+  {
+    icon: <FaGem />,
+    title: "Premium Finish",
+    desc: "From standard to 4D gel, every plate is built for a strong, professional, high-contrast look.",
+  },
+  {
+    icon: <FaClock />,
+    title: "Fast & Reliable Service",
+    desc: "Orders are handled quickly with clear communication and attention to detail from start to finish.",
+  },
+  {
+    icon: <FaClipboardCheck />,
+    title: "Hassle-Free Process",
+    desc: "Simple ordering, clear document guidance, and smooth delivery with no unnecessary friction.",
+  },
+  {
+    icon: <FaHandshake />,
+    title: "Honest & Transparent",
+    desc: "No hidden costs and no shortcuts, just high-quality plates delivered with confidence.",
+  },
+];
 
 export default function WhyChooseUs() {
-  const reasons = [
-    {
-      icon: <FaShieldAlt />,
-      title: "Ceramic Coated Plates",
-      desc: "Every plate comes with a protective ceramic coating as standard — no extra cost.",
-    },
-    {
-      icon: <FaCheckCircle />,
-      title: "100% Road Legal",
-      desc: "All plates fully comply with British Standard BS AU 145e and DVLA regulations.",
-    },
-    {
-      icon: <FaGem />,
-      title: "Premium Finish",
-      desc: "From standard to 4D gel, every plate is built for a sharp, professional look.",
-    },
-    {
-      icon: <FaClock />,
-      title: "Fast & Reliable Service",
-      desc: "Orders handled efficiently with attention to detail from start to finish.",
-    },
-    {
-      icon: <FaClipboardCheck />,
-      title: "Hassle-Free Process",
-      desc: "Simple ordering, clear document guidance, and smooth delivery every time.",
-    },
-    {
-      icon: <FaHandshake />,
-      title: "Honest & Transparent",
-      desc: "No hidden costs, no shortcuts — just quality plates at fair prices.",
-    },
-  ];
-
   return (
-    <section id="why" className="bg-black text-white py-24 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        {/* HEADER */}
+    <section id="why" className="bg-[#0D0D0D] px-6 py-24 text-white md:px-12">
+      <div className="mx-auto max-w-6xl">
         <div className="mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">
-            Why Choose <span className="text-red-600">Us</span>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">
+            Built around confidence and compliance
+          </p>
+          <h2 className="text-4xl font-bold uppercase tracking-wide md:text-5xl">
+            Why Choose <span className="text-[#E8196B]">Us</span>
           </h2>
-          <div className="w-20 h-[2px] bg-[#C0C0C0] mt-4"></div>
+          <div className="mt-4 h-[2px] w-20 bg-[#E8196B]" />
         </div>
 
-        {/* CONTENT */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {reasons.map((item, i) => (
-            <div key={i} className="flex items-start gap-4">
-              {/* ICON */}
-              <div className="text-red-600 text-2xl mt-1">{item.icon}</div>
-
-              {/* TEXT */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+          {reasons.map((item) => (
+            <div key={item.title} className="flex items-start gap-4 rounded-md border border-white/10 bg-[#1F1F1F] p-6">
+              <div className="mt-1 text-2xl text-[#E8196B]">{item.icon}</div>
               <div>
-                <h3 className="uppercase font-semibold tracking-wide text-lg">
-                  {item.title}
-                </h3>
-                <p className="text-[#C0C0C0] text-sm mt-1 leading-relaxed">
-                  {item.desc}
-                </p>
+                <h3 className="text-lg font-semibold uppercase tracking-[0.12em]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#888888]">{item.desc}</p>
               </div>
             </div>
           ))}

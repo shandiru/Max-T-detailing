@@ -3,87 +3,69 @@ import { FaCheck, FaExclamationTriangle } from "react-icons/fa";
 
 export default function PlateComparison() {
   return (
-    <section className="bg-black text-white py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#0D0D0D] px-6 py-20 text-white">
+      <div className="mx-auto max-w-6xl">
+        <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">
+          Choose the right fit
+        </p>
+        <h2 className="mb-16 text-center text-4xl font-bold uppercase md:text-5xl">Road Legal vs Show Plates</h2>
 
-        {/* Heading */}
-        <h2 className="text-center text-4xl md:text-5xl font-bold mb-16">
-          Road Legal vs Show Plates
-        </h2>
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-          {/* LEFT CARD - ROAD LEGAL */}
-          <div className="border border-yellow-500 rounded-xl p-8">
-            
-            {/* Title */}
-            <div className="flex items-center gap-3 mb-6">
-              <FaCheck className="text-yellow-400 text-xl" />
-              <h3 className="text-xl font-semibold text-yellow-400">
-                Road Legal Plates
-              </h3>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="rounded-md border border-[#E8196B] bg-[#1F1F1F] p-8">
+            <div className="mb-6 flex items-center gap-3">
+              <FaCheck className="text-xl text-[#E8196B]" />
+              <h3 className="text-xl font-semibold uppercase tracking-[0.1em] text-[#E8196B]">Road Legal Plates</h3>
             </div>
 
-            <p className="text-gray-300 mb-6">
-              DVLA compliant. Safe for daily driving on UK roads.
-            </p>
+            <p className="mb-6 text-[#888888]">DVLA compliant and safe for daily driving on UK roads.</p>
 
-            <ul className="space-y-3 text-gray-300">
+            <ul className="space-y-3 text-[#888888]">
               <li className="flex items-start gap-2">
-                <span className="text-yellow-400">•</span>
+                <span className="text-[#E8196B]">•</span>
                 DVLA compliant
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-yellow-400">•</span>
+                <span className="text-[#E8196B]">•</span>
                 Daily driving approved
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-yellow-400">•</span>
+                <span className="text-[#E8196B]">•</span>
                 Standard and custom formats
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-yellow-400">•</span>
+                <span className="text-[#E8196B]">•</span>
                 Ceramic coated protection
               </li>
             </ul>
           </div>
 
-          {/* RIGHT CARD - SHOW PLATES */}
-          <div className="border border-gray-700 rounded-xl p-8">
-            
-            {/* Title */}
-            <div className="flex items-center gap-3 mb-6">
-              <FaExclamationTriangle className="text-yellow-400 text-xl" />
-              <h3 className="text-xl font-semibold">
-                Show Plates
-              </h3>
+          <div className="rounded-md border border-white/10 bg-[#1F1F1F] p-8">
+            <div className="mb-6 flex items-center gap-3">
+              <FaExclamationTriangle className="text-xl text-[#FF5FA0]" />
+              <h3 className="text-xl font-semibold uppercase tracking-[0.1em]">Show Plates</h3>
             </div>
 
-            <p className="text-gray-300 mb-6">
-              Custom designs for off-road vehicles. Not street legal.
-            </p>
+            <p className="mb-6 text-[#888888]">Custom designs for off-road vehicles, displays, and show builds.</p>
 
-            <ul className="space-y-3 text-gray-300">
+            <ul className="space-y-3 text-[#888888]">
               <li className="flex items-start gap-2">
-                <span className="text-yellow-400">•</span>
+                <span className="text-[#FF5FA0]">•</span>
                 Off-road use only
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-yellow-400">•</span>
+                <span className="text-[#FF5FA0]">•</span>
                 Custom designs available
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-yellow-400">•</span>
-                Show events and displays
+                <span className="text-[#FF5FA0]">•</span>
+                Ideal for events and displays
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-yellow-400">•</span>
+                <span className="text-[#FF5FA0]">•</span>
                 Premium finish options
               </li>
             </ul>
           </div>
-
         </div>
       </div>
     </section>

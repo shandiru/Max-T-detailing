@@ -195,10 +195,10 @@ function OptionButton({ active, onClick, children, className = "" }) {
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-lg border px-4 py-3 text-sm font-medium transition ${
+      className={`rounded-md border px-4 py-3 text-sm font-medium transition ${
         active
-          ? "border-red-600 bg-red-600 text-white"
-          : "border-zinc-700 bg-[#111111] text-zinc-200 hover:border-red-500/60"
+          ? "border-[#E8196B] bg-[#E8196B] text-white"
+          : "border-white/10 bg-[#111111] text-zinc-200 hover:border-[#E8196B]/60"
       } ${className}`}
     >
       {children}
@@ -210,7 +210,7 @@ function PreviewCard({ title, subtitle, canvasRef }) {
   return (
     <div>
       <h3 className="mb-3 text-lg font-bold text-white">{title}</h3>
-      <div className="flex min-h-72 items-center justify-center rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900 via-[#101010] to-black p-6">
+      <div className="flex min-h-72 items-center justify-center rounded-md border border-white/10 bg-gradient-to-br from-[#1F1F1F] via-[#101010] to-black p-6">
         <div className="max-w-full overflow-x-auto">
           <canvas ref={canvasRef} className="mx-auto h-auto max-w-full" />
         </div>
@@ -277,27 +277,27 @@ export default function UKPlateBuilder() {
   const selectedStyle = STYLE_OPTIONS.find((option) => option.id === config.style);
 
   return (
-    <main className="min-h-screen bg-black px-4 pb-20 pt-8 text-white">
+    <main className="min-h-screen bg-[#0D0D0D] px-4 pb-20 pt-8 text-white">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-            Build Your <span className="text-red-600">Perfect Plate</span>
+            Build Your <span className="text-[#E8196B]">Perfect Plate</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-zinc-400">
-            Customize your number plate with our interactive designer. See your design update in real
-            time and download the finished preview when you are happy with it.
+            Customize your number plate with our interactive designer. See your design update in real time and
+            download the finished preview when you are happy with it.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div>
-            <div className="rounded-2xl border border-zinc-800 bg-[#090909] p-8">
+            <div className="rounded-md border border-white/10 bg-[#1F1F1F] p-8">
               <h2 className="mb-8 text-2xl font-bold text-white">Customize Your Plate</h2>
 
               <div className="space-y-6">
                 <div>
                   <label className="mb-3 block text-sm font-bold text-white">
-                    Registration Number <span className="text-red-600">*</span>
+                    Registration Number <span className="text-[#E8196B]">*</span>
                   </label>
                   <input
                     type="text"
@@ -305,14 +305,14 @@ export default function UKPlateBuilder() {
                     value={config.registration}
                     onChange={(event) => updateConfig("registration", sanitizeRegistration(event.target.value))}
                     placeholder="AB21XYZ"
-                    className="w-full rounded-lg border border-zinc-700 bg-black px-4 py-3 text-center font-mono text-lg font-bold uppercase text-white placeholder:text-zinc-500 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600/30"
+                    className="w-full rounded-md border border-white/10 bg-black px-4 py-3 text-center font-mono text-lg font-bold uppercase text-white placeholder:text-zinc-500 focus:border-[#E8196B] focus:outline-none focus:ring-2 focus:ring-[#E8196B]/30"
                   />
                   <p className="mt-2 text-xs text-zinc-500">Enter your 7-character registration number</p>
                 </div>
 
                 <div>
                   <label className="mb-3 block text-sm font-bold text-white">
-                    Plate Size <span className="text-red-600">*</span>
+                    Plate Size <span className="text-[#E8196B]">*</span>
                   </label>
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                     {SIZE_OPTIONS.map((option) => (
@@ -330,7 +330,7 @@ export default function UKPlateBuilder() {
 
                 <div>
                   <label className="mb-3 block text-sm font-bold text-white">
-                    Plate Style <span className="text-red-600">*</span>
+                    Plate Style <span className="text-[#E8196B]">*</span>
                   </label>
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                     {STYLE_OPTIONS.map((option) => (
@@ -374,7 +374,7 @@ export default function UKPlateBuilder() {
                       type="checkbox"
                       checked={config.includeBadge}
                       onChange={(event) => updateConfig("includeBadge", event.target.checked)}
-                      className="h-5 w-5 rounded accent-red-600"
+                      className="h-5 w-5 rounded accent-[#E8196B]"
                     />
                     Include UK Badge
                   </label>
@@ -385,7 +385,7 @@ export default function UKPlateBuilder() {
                     onChange={(event) => updateConfig("badgeText", event.target.value.toUpperCase().slice(0, 2))}
                     disabled={!config.includeBadge}
                     placeholder="UK"
-                    className="w-full rounded-lg border border-zinc-700 bg-black px-4 py-3 text-center font-bold uppercase text-white placeholder:text-zinc-500 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600/30 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="w-full rounded-md border border-white/10 bg-black px-4 py-3 text-center font-bold uppercase text-white placeholder:text-zinc-500 focus:border-[#E8196B] focus:outline-none focus:ring-2 focus:ring-[#E8196B]/30 disabled:cursor-not-allowed disabled:opacity-50"
                   />
                   <p className="mt-2 text-xs text-zinc-500">Blue badge with white text for road-legal styling</p>
                 </div>
@@ -396,7 +396,7 @@ export default function UKPlateBuilder() {
                       type="checkbox"
                       checked={config.evStrip}
                       onChange={(event) => updateConfig("evStrip", event.target.checked)}
-                      className="h-5 w-5 rounded accent-red-600"
+                      className="h-5 w-5 rounded accent-[#E8196B]"
                     />
                     Add EV Green Strip
                   </label>
@@ -417,12 +417,10 @@ export default function UKPlateBuilder() {
                       </OptionButton>
                     ))}
                   </div>
-                  <p className="mt-2 text-xs text-zinc-500">
-                    Enhanced reflectivity gives the preview a brighter finish
-                  </p>
+                  <p className="mt-2 text-xs text-zinc-500">Enhanced reflectivity gives the preview a brighter finish</p>
                 </div>
 
-                <div className="rounded-xl border border-red-600/30 bg-red-600/10 p-4">
+                <div className="rounded-md border border-[#E8196B]/30 bg-[#E8196B]/10 p-4">
                   <p className="text-sm leading-relaxed text-zinc-300">
                     <span className="font-bold text-white">DVLA Compliant:</span> Designed with UK-style layout and
                     compliant footer details.
@@ -440,17 +438,8 @@ export default function UKPlateBuilder() {
 
           <div className="flex flex-col gap-8">
             <div className="space-y-6 lg:sticky lg:top-24">
-              <PreviewCard
-                title="Front View"
-                subtitle="White front plate preview"
-                canvasRef={frontCanvasRef}
-              />
-
-              <PreviewCard
-                title="Rear View"
-                subtitle="Yellow rear plate preview"
-                canvasRef={rearCanvasRef}
-              />
+              <PreviewCard title="Front View" subtitle="White front plate preview" canvasRef={frontCanvasRef} />
+              <PreviewCard title="Rear View" subtitle="Yellow rear plate preview" canvasRef={rearCanvasRef} />
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <button
@@ -461,7 +450,7 @@ export default function UKPlateBuilder() {
                       `${sanitizeRegistration(config.registration) || "plate"}_front.png`,
                     )
                   }
-                  className="rounded-lg bg-white px-5 py-4 font-bold text-black transition hover:bg-zinc-200"
+                  className="rounded-md bg-white px-5 py-4 font-bold text-black transition hover:bg-zinc-200"
                 >
                   Download Front
                 </button>
@@ -474,7 +463,7 @@ export default function UKPlateBuilder() {
                       `${sanitizeRegistration(config.registration) || "plate"}_rear.png`,
                     )
                   }
-                  className="rounded-lg bg-red-600 px-5 py-4 font-bold text-white transition hover:bg-red-500"
+                  className="rounded-md bg-[#E8196B] px-5 py-4 font-bold text-white transition hover:bg-[#FF5FA0]"
                 >
                   Download Rear
                 </button>
@@ -483,12 +472,12 @@ export default function UKPlateBuilder() {
               <button
                 type="button"
                 onClick={downloadBoth}
-                className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-red-600 to-red-500 px-5 py-4 font-bold text-white transition hover:opacity-90"
+                className="flex w-full items-center justify-center rounded-md bg-gradient-to-r from-[#E8196B] to-[#FF5FA0] px-5 py-4 font-bold text-white transition hover:opacity-90"
               >
                 Download Plate Preview
               </button>
 
-              <div className="rounded-2xl border border-zinc-800 bg-[#090909] p-6">
+              <div className="rounded-md border border-white/10 bg-[#1F1F1F] p-6">
                 <h3 className="mb-3 text-lg font-bold text-white">Preview Details</h3>
                 <div className="space-y-2 text-sm text-zinc-400">
                   <p>
@@ -508,23 +497,23 @@ export default function UKPlateBuilder() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-zinc-800 bg-[#090909] p-6">
+              <div className="rounded-md border border-white/10 bg-[#1F1F1F] p-6">
                 <h3 className="mb-3 text-lg font-bold text-white">What You Get</h3>
                 <ul className="space-y-2 text-sm text-zinc-400">
                   <li className="flex items-center gap-2">
-                    <span className="text-red-600">✓</span> DVLA Approved Style
+                    <span className="text-[#E8196B]">✓</span> DVLA Approved Style
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-red-600">✓</span> High Quality Print Preview
+                    <span className="text-[#E8196B]">✓</span> High Quality Print Preview
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-red-600">✓</span> UV Resistant Premium Finish
+                    <span className="text-[#E8196B]">✓</span> UV Resistant Premium Finish
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-red-600">✓</span> Fast Turnaround Ready Design
+                    <span className="text-[#E8196B]">✓</span> Fast Turnaround Ready Design
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-red-600">✓</span> Downloadable Front and Rear Outputs
+                    <span className="text-[#E8196B]">✓</span> Downloadable Front and Rear Outputs
                   </li>
                 </ul>
               </div>

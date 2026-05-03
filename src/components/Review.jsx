@@ -1,80 +1,58 @@
 import React from "react";
 
+const testimonials = [
+  {
+    name: "Peter Yule",
+    text: "Brilliant service from start to finish. Fast turnaround, clear communication, and the finished plates looked superb.",
+  },
+  {
+    name: "Foysal Ahmed",
+    text: "Always reliable and always great quality. The ordering process was simple and the finish was spot on.",
+  },
+  {
+    name: "Aires Silva",
+    text: "5-star service. Easy to deal with, professional throughout, and the plates looked even better in person.",
+  },
+];
+
 export default function Testimonials() {
-  const testimonials = [
-    {
-      name: "Peter Yule",
-      text: "Brilliant service from start to finish. Diagnosed the issue quickly and explained everything clearly before any work. Great pricing and communication.",
-    },
-    {
-      name: "Foysal Ahmed",
-      text: "Always reliable, always get good work done at a good price.",
-    },
-    {
-      name: "Aires Silva",
-      text: "5★ service, always there when needed. Just want to say thank you.",
-    },
-  ];
-
   return (
-    <section className="bg-[#f5f5f5] py-24 text-[#0E1C29]">
-      <div className="max-w-6xl mx-auto px-6">
-
-        {/* HEADER */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            What Our Customers Say
-          </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Trusted by drivers for reliable service, clear communication, and great results.
+    <section className="bg-[#0D0D0D] py-24 text-white" id="reviews">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-14 text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">Social proof</p>
+          <h2 className="mb-4 text-4xl font-bold uppercase md:text-5xl">What Our Customers Say</h2>
+          <p className="mx-auto max-w-3xl text-lg text-[#888888]">
+            Trusted by drivers for reliable service, sharp finish quality, and clear communication.
           </p>
         </div>
 
-        {/* IMAGE ROW */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src="/after.jpg"
-              alt="After service"
-              className="w-full h-[260px] object-cover"
-            />
+        <div className="mb-16 grid gap-8 md:grid-cols-2">
+          <div className="overflow-hidden rounded-md border border-white/10 shadow-lg">
+            <img src="/after.jpg" alt="After service" className="h-[260px] w-full object-cover" />
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src="/before.jpg"
-              alt="Before service"
-              className="w-full h-[260px] object-cover"
-            />
+          <div className="overflow-hidden rounded-md border border-white/10 shadow-lg">
+            <img src="/before.jpg" alt="Before service" className="h-[260px] w-full object-cover" />
           </div>
         </div>
 
-        {/* TESTIMONIAL CARDS */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((item, i) => (
+        <div className="grid gap-6 md:grid-cols-3">
+          {testimonials.map((item) => (
             <div
-              key={i}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-2 transition-transform flex flex-col"
+              key={item.name}
+              className="flex flex-col rounded-md border border-white/10 bg-[#1F1F1F] p-6 shadow-lg transition-transform hover:-translate-y-2 hover:border-[#E8196B]/40"
             >
-              {/* Stars */}
-              <div className="flex mb-3 text-orange-500">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i}>★</span>
+              <div className="mb-3 flex text-[#E8196B]">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <span key={index}>★</span>
                 ))}
               </div>
 
-              {/* Text */}
-              <p className="text-gray-700 leading-relaxed mb-6 flex-grow">
-                {item.text}
-              </p>
-
-              {/* Name */}
-              <h4 className="font-semibold uppercase tracking-wide text-sm">
-                {item.name}
-              </h4>
+              <p className="mb-6 flex-grow leading-relaxed text-[#888888]">{item.text}</p>
+              <h4 className="text-sm font-semibold uppercase tracking-[0.16em]">{item.name}</h4>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

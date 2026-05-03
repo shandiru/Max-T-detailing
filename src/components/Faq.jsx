@@ -1,61 +1,52 @@
 import React, { useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
+import { FaMinus, FaPlus } from "react-icons/fa";
+
+const faqs = [
+  {
+    q: "Are your plates DVLA approved?",
+    a: "Yes. All road-legal plates are made to current DVLA requirements and BS AU 145e standards.",
+  },
+  {
+    q: "How long does delivery take?",
+    a: "Most orders are turned around quickly, with many completed and dispatched within 48 hours.",
+  },
+  {
+    q: "Can I customize my plate design?",
+    a: "Yes. Show plates offer the most freedom, while road-legal plates must stay within DVLA formatting rules.",
+  },
+  {
+    q: "Do you offer premium styles like 3D and 4D?",
+    a: "Absolutely. We offer standard, 3D gel, 4D, and premium hybrid finishes depending on the look you want.",
+  },
+  {
+    q: "What documents do I need?",
+    a: "For road-legal plates you will need proof of identity and proof of entitlement, in line with DVLA requirements.",
+  },
+];
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const faqs = [
-    {
-      q: "Are your plates DVLA approved?",
-      a: "Yes, all our road legal plates are fully DVLA approved and BS AU 145e certified. They are safe and legal for use on UK roads.",
-    },
-    {
-      q: "How long does delivery take?",
-      a: "Most orders are delivered within 48 hours. We offer express shipping for urgent orders.",
-    },
-    {
-      q: "Can I customize my plate design?",
-      a: "Yes! We offer customization for show plates. Road legal plates must follow DVLA format standards.",
-    },
-    {
-      q: "What is your warranty?",
-      a: "All plates come with a 5-year durability guarantee. We replace any plates that fade or show defects.",
-    },
-    {
-      q: "Do you accept returns?",
-      a: "We offer returns within 30 days if you're not satisfied with your order.",
-    },
-  ];
-
   return (
-    <section className="bg-black text-white py-24 px-6 md:px-12 lg:px-20">
-      <div className="max-w-7xl mx-auto">
-        {/* HEADING */}
-        <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl uppercase leading-[0.9] max-w-3xl mb-20">
+    <section className="bg-[#0D0D0D] px-6 py-24 text-white md:px-12 lg:px-20">
+      <div className="mx-auto max-w-7xl">
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">Need help?</p>
+        <h2 className="mb-20 max-w-3xl text-5xl uppercase leading-[0.9] md:text-6xl lg:text-7xl">
           Frequently Asked <br /> Questions
         </h2>
 
-        {/* FAQ GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {faqs.map((item, index) => {
             const isOpen = activeIndex === index;
 
             return (
-              <div
-                key={index}
-                className="border border-white/10 bg-black"
-              >
+              <div key={item.q} className="rounded-md border border-white/10 bg-[#1F1F1F]">
                 <button
                   onClick={() => setActiveIndex(isOpen ? null : index)}
-                  className="w-full min-h-[88px] px-7 md:px-8 flex items-center justify-between gap-6 text-left"
+                  className="flex min-h-[88px] w-full items-center justify-between gap-6 px-7 text-left md:px-8"
                 >
-                  <h3 className="font-serif text-xl md:text-2xl uppercase leading-tight">
-                    {item.q}
-                  </h3>
-
-                  <span className="shrink-0 text-white text-lg">
-                    {isOpen ? <FaMinus /> : <FaPlus />}
-                  </span>
+                  <h3 className="text-xl uppercase leading-tight md:text-2xl">{item.q}</h3>
+                  <span className="shrink-0 text-lg text-[#E8196B]">{isOpen ? <FaMinus /> : <FaPlus />}</span>
                 </button>
 
                 <div
@@ -63,9 +54,7 @@ export default function FAQ() {
                     isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="px-7 md:px-8 pb-7 text-gray-400 leading-relaxed">
-                    {item.a}
-                  </p>
+                  <p className="px-7 pb-7 leading-relaxed text-[#888888] md:px-8">{item.a}</p>
                 </div>
               </div>
             );

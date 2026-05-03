@@ -1,29 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Phone, Mail, Clock, Menu, X, ChevronDown } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Clock, Mail, Menu, Phone, X } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false); // mobile menu
+const navItems = [
+  { name: "Home", link: "/#" },
+  { name: "About", link: "/#about" },
+  { name: "Products", link: "/#products" },
+  { name: "Why Us", link: "/#why" },
+  { name: "Reviews", link: "/#reviews" },
+  { name: "Contact", link: "/#contact" },
+];
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const [showTopBar, setShowTopBar] = useState(true);
   const [scrolled, setScrolled] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false); // dropdown
-  const servicesRef = useRef(null);
+  const location = useLocation();
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
-        setServicesOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  // Scroll behavior
   useEffect(() => {
     let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > 50) {
@@ -35,141 +32,96 @@ const Header = () => {
       }
       lastScrollY = currentScrollY;
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { name: "Home", link: "/#" },
-    { name: "About", link: "/#about" },
-    {
-      name: "Services",
-      dropdown: [
-        { name: "Mot", link: "/mot" },
-        { name: "Wheel Alignment", link: "/wheel-alignment" },
-        { name: "Service", link: "/service" },
-        { name: "Gearbox", link: "/gearbox" },
-        { name: "Clutch", link: "/clutch" },
-        { name: "Diagnostic", link: "/diagnostic" },
-      ],
-    },
-    { name: "Projects", link: "/#projects" },
-    { name: "Testimonials", link: "/#testimonials" },
-    { name: "Contact", link: "/#contact" },
-  ];
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname, location.hash]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Bar */}
+    <header className="fixed inset-x-0 top-0 z-50 transition-all duration-300">
       <div
         className={`transition-all duration-500 ease-in-out ${
-          showTopBar ? "max-h-20 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+          showTopBar ? "max-h-20 opacity-100" : "max-h-0 overflow-hidden opacity-0"
         }`}
       >
-        <div className="flex flex-col md:flex-row w-full">
-          <div className="flex-1 bg-orange-500 text-white flex justify-center md:justify-start">
-            <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-center md:justify-start px-6 py-2.5 gap-3 md:gap-6">
-              <a 
-                href="tel:+447752364546"
-                className="flex items-center gap-2">
+        <div className="flex w-full flex-col border-b border-white/10 md:flex-row">
+          <div className="flex flex-1 justify-center bg-[#E8196B] text-white md:justify-start">
+            <div className="flex w-full max-w-7xl flex-col items-center justify-center gap-3 px-6 py-2.5 md:flex-row md:justify-start md:gap-6">
+              <a href="tel:+447580392806" className="flex items-center gap-2 text-sm font-semibold">
                 <Phone size={16} />
-                <span className="font-semibold text-sm">+44 775 236 4546</span>
+                <span>+44 7580 392806</span>
               </a>
-              <div className="h-4 w-px bg-white opacity-70 hidden md:block" />
-              <a 
-                href="mailto: tom@acgautocentre.co.uk"
-                className="flex items-center gap-2">
+              <div className="hidden h-4 w-px bg-white/70 md:block" />
+              <a href="mailto:ukplatelab@gmail.com" className="flex items-center gap-2 text-sm font-semibold">
                 <Mail size={16} />
-                <span className="font-semibold text-sm hover:text-gray-200">tom@acgautocentre.co.uk</span>
+                <span className="hover:text-white/85">ukplatelab@gmail.com</span>
               </a>
             </div>
           </div>
-          <div className="flex-1 bg-black text-white flex justify-center md:justify-end">
-            <div className="max-w-7xl w-full flex items-center justify-center md:justify-end px-6 py-2.5">
-              <div className="flex items-center gap-2 text-sm font-semibold">
+          <div className="flex flex-1 justify-center bg-[#0D0D0D] text-white md:justify-end">
+            <div className="flex w-full max-w-7xl items-center justify-center px-6 py-2.5 md:justify-end">
+              <div className="flex items-center gap-2 text-sm font-semibold text-[#888888]">
                 <Clock size={16} />
-                <span className="hidden sm:inline">
-                  Mon - Fri 08:30 - 17:30 / Sat 09:00 - 15:00 / Sunday - Closed 
-                </span>
-                <span className="sm:hidden">Mon - Fri 08:30 - 17:30</span>
+                <span className="hidden sm:inline">DVLA Registered · BSAU145e · Mon-Sun 8 AM - 8 PM</span>
+                <span className="sm:hidden">Mon-Sun 8 AM - 8 PM</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Navigation */}
-      <div className={`bg-white transition-shadow duration-300 ${scrolled ? "shadow-lg" : "shadow-sm"}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-2">
-            <div className="flex items-center space-x-2 sm:mt-0 mt-7">
+      <div
+        className={`border-b border-white/10 bg-[#0D0D0D]/95 backdrop-blur transition-shadow duration-300 ${
+          scrolled ? "shadow-[0_12px_30px_rgba(0,0,0,0.28)]" : "shadow-sm"
+        }`}
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between py-4">
+            <Link to="/" className="flex items-center gap-3">
               <img
-                src="logo.png"
-                alt="ACG Auto Centre"
-                className="h-16 bg-black p-2 rounded-full"
+                src="/logo.png"
+                alt="UK Plate Lab"
+                className="h-14 w-auto rounded-md border border-white/10 bg-[#1F1F1F] p-2"
               />
-            </div>
+              <div className="hidden sm:block">
+                <p className="font-display text-2xl uppercase leading-none tracking-[0.06em] text-white">
+                  UK Plate Lab
+                </p>
+                <p className="text-[11px] uppercase tracking-[0.22em] text-[#888888]">
+                  Custom Road Legal & Show Plates
+                </p>
+              </div>
+            </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden lg:flex space-x-8 items-center relative">
+            <nav className="hidden items-center space-x-8 lg:flex">
               {navItems.map((item) => (
-                <div
+                <HashLink
                   key={item.name}
-                  className="relative"
-                  ref={item.name === "Services" ? servicesRef : null}
+                  smooth
+                  to={item.link}
+                  className="text-sm font-semibold uppercase tracking-[0.18em] text-[#888888] transition-colors hover:text-white"
                 >
-                  {item.dropdown ? (
-                    <>
-                      <button
-                        onClick={() => setServicesOpen(!servicesOpen)}
-                        className="flex items-center gap-1 text-gray-700 hover:text-orange-500 font-medium transition-colors"
-                      >
-                        {item.name} <ChevronDown size={14} />
-                      </button>
-
-                      {servicesOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-48 bg-white border shadow-lg rounded-md py-2 z-50">
-                          {item.dropdown.map((sub) => (
-                            <Link
-                              key={sub.name}
-                              to={sub.link}
-                              onClick={() => setServicesOpen(false)} // <-- closes dropdown
-                              className="block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-white"
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <HashLink
-                      smooth
-                      to={item.link}
-                      className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
-                    >
-                      {item.name}
-                    </HashLink>
-                  )}
-                </div>
+                  {item.name}
+                </HashLink>
               ))}
             </nav>
 
-            {/* Desktop CTA */}
             <div className="hidden lg:block">
-              <HashLink
-                smooth
-                to="/#contact"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md"
+              <Link
+                to="/build-your-plate"
+                className="inline-flex items-center justify-center rounded-md bg-[#E8196B] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-[#FF5FA0]"
               >
                 Build Your Plate
-              </HashLink>
+              </Link>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden mt-8 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              onClick={() => setIsOpen((current) => !current)}
+              className="rounded-md border border-white/10 p-2 text-white transition-colors hover:border-[#E8196B] lg:hidden"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -177,65 +129,33 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <div
-          className={`lg:hidden bg-white border-t overflow-hidden transition-all duration-300 ${
+          className={`overflow-hidden border-t border-white/10 bg-[#111111] transition-all duration-300 lg:hidden ${
             isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <nav className="px-6 py-4 space-y-3">
-            {navItems.map((item) =>
-              item.dropdown ? (
-                <div key={item.name}>
-                  <button
-                    onClick={() => setServicesOpen(!servicesOpen)}
-                    className="flex justify-between w-full text-gray-700 hover:text-orange-500 py-2 font-medium"
-                  >
-                    {item.name} <ChevronDown size={14} />
-                  </button>
-                  {servicesOpen && (
-                    <div className="pl-4 mt-1 space-y-1">
-                      {item.dropdown.map((sub) => (
-                        <Link
-                          key={sub.name}
-                          to={sub.link}
-                          onClick={() => {
-                            setIsOpen(false);       // close mobile menu
-                            setServicesOpen(false); // close dropdown
-                          }}
-                          className="block text-gray-700 hover:text-orange-500 py-1"
-                        >
-                          {sub.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <HashLink
-                  key={item.name}
-                  smooth
-                  to={item.link}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-gray-700 hover:text-orange-500 py-2 font-medium"
-                >
-                  {item.name}
-                </HashLink>
-              )
-            )}
-            <HashLink
-              smooth
-              to="/#contact"
+          <nav className="space-y-3 px-6 py-4">
+            {navItems.map((item) => (
+              <HashLink
+                key={item.name}
+                smooth
+                to={item.link}
+                onClick={() => setIsOpen(false)}
+                className="block py-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#888888] transition-colors hover:text-white"
+              >
+                {item.name}
+              </HashLink>
+            ))}
+            <Link
+              to="/build-your-plate"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg mt-4"
+              className="mt-4 block w-full rounded-md bg-[#E8196B] py-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-[#FF5FA0]"
             >
               Build Your Plate
-            </HashLink>
+            </Link>
           </nav>
         </div>
       </div>
     </header>
   );
-};
-
-export default Header;
+}

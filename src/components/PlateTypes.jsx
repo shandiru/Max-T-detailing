@@ -3,49 +3,49 @@ import { useState } from "react";
 const products = [
   {
     title: "Standard Number Plates Pair",
-    desc: "Front and rear oblong plates (520×111mm) with ceramic coating. Fully compliant.",
+    desc: "Front and rear oblong plates with ceramic coating. Fully compliant and built for daily use.",
     price: "£25.00",
     category: ["All Plates", "Road Plates"],
     image: "/images/standard-plates.jpg",
   },
   {
     title: "Replacement Standard Single Plate",
-    desc: "Single road-legal replacement plate. Ceramic coated for lasting protection.",
+    desc: "Single road-legal replacement plate with a durable ceramic coated finish.",
     price: "£15.00",
     category: ["All Plates", "Road Plates", "Single Plates"],
     image: "/images/single-plate.jpg",
   },
   {
     title: "3D Gel Number Plates Pair",
-    desc: "Raised domed gel resin characters for a premium 3D finish. Fully road legal.",
+    desc: "Raised domed gel resin characters for a premium 3D finish that stays road legal.",
     price: "£40.00",
     category: ["All Plates", "Road Plates"],
     image: "/images/3d-gel-plates.jpg",
   },
   {
     title: "4D Number Plate Pair",
-    desc: "Laser-cut acrylic raised characters for a bold, standout 4D look. Road legal.",
+    desc: "Laser-cut acrylic raised characters for a bold, crisp 4D look.",
     price: "£40.00",
     category: ["All Plates", "Road Plates"],
     image: "/images/4d-plates.jpg",
   },
   {
     title: "4D Gel Number Plate Pair",
-    desc: "Combines 4D acrylic lettering with gel resin for the ultimate premium plate.",
+    desc: "4D acrylic lettering combined with gel resin for the ultimate premium plate finish.",
     price: "£55.00",
     category: ["All Plates", "Road Plates"],
     image: "/images/4d-gel-plates.jpg",
   },
   {
     title: "Show Plates Set",
-    desc: "Pair of custom show plates for exhibitions, car shows, or display. Off-road use only.",
+    desc: "Pair of custom show plates for exhibitions, display builds, and off-road vehicles.",
     price: "£30.00",
     category: ["All Plates", "Show Plates"],
     image: "/images/show-plates-set.jpg",
   },
   {
-    title: "Show Plate — Single",
-    desc: "Single custom show plate for display, photo shoots, or events. Off-road use only.",
+    title: "Show Plate - Single",
+    desc: "Single custom show plate for display, photo shoots, or events.",
     price: "£15.00",
     category: ["All Plates", "Show Plates", "Single Plates"],
     image: "/images/show-plate-single.jpg",
@@ -57,20 +57,16 @@ const tabs = ["All Plates", "Road Plates", "Show Plates", "Single Plates"];
 export default function PlateTypes() {
   const [activeTab, setActiveTab] = useState("All Plates");
 
-  const filteredProducts = products.filter((product) =>
-    product.category.includes(activeTab)
-  );
+  const filteredProducts = products.filter((product) => product.category.includes(activeTab));
 
   return (
-    <section className="bg-black px-4 py-12 text-white sm:px-6 lg:px-8">
+    <section className="bg-[#0D0D0D] px-4 py-16 text-white sm:px-6 lg:px-8" id="products">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
-          <h2 className="mb-3 text-3xl font-bold sm:text-4xl">
-            Our Plate Types
-          </h2>
-          <p className="mx-auto max-w-2xl text-sm text-gray-300 sm:text-base">
-            Choose from our range of premium number plate options. All DVLA
-            approved and road legal.
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">Product range</p>
+          <h2 className="mb-3 text-4xl font-bold uppercase sm:text-5xl">Our Plate Types</h2>
+          <p className="mx-auto max-w-2xl text-sm text-[#888888] sm:text-base">
+            Choose from our range of premium number plate options. All DVLA approved and road legal where stated.
           </p>
         </div>
 
@@ -79,10 +75,10 @@ export default function PlateTypes() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`rounded-xl border-2 border-pink-500 px-4 py-2 text-sm font-medium transition-all duration-300 sm:text-base ${
+              className={`rounded-md border px-4 py-2 text-sm font-semibold uppercase tracking-[0.12em] transition-all duration-300 sm:text-base ${
                 activeTab === tab
-                  ? "bg-pink-500 text-black"
-                  : "bg-transparent text-pink-500 hover:bg-pink-500 hover:text-black"
+                  ? "border-[#E8196B] bg-[#E8196B] text-white"
+                  : "border-[#E8196B] bg-transparent text-[#E8196B] hover:bg-[#E8196B] hover:text-white"
               }`}
             >
               {tab}
@@ -94,26 +90,14 @@ export default function PlateTypes() {
           {filteredProducts.map((product) => (
             <div
               key={product.title}
-              className="overflow-hidden rounded-xl bg-[#0d0d0d] shadow-lg transition-transform duration-300 hover:-translate-y-1"
+              className="overflow-hidden rounded-md border border-white/10 bg-[#1F1F1F] shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:border-[#E8196B]/40"
             >
-              <img
-                src={product.image}
-                alt={product.title}
-                className="h-56 w-full object-cover"
-              />
+              <img src={product.image} alt={product.title} className="h-56 w-full object-cover" />
 
               <div className="p-5">
-                <h3 className="mb-2 text-lg font-bold text-white">
-                  {product.title}
-                </h3>
-
-                <p className="mb-4 text-sm leading-relaxed text-gray-300">
-                  {product.desc}
-                </p>
-
-                <p className="text-lg font-bold text-pink-500">
-                  {product.price}
-                </p>
+                <h3 className="mb-2 text-lg font-bold text-white">{product.title}</h3>
+                <p className="mb-4 text-sm leading-relaxed text-[#888888]">{product.desc}</p>
+                <p className="text-lg font-bold text-[#E8196B]">{product.price}</p>
               </div>
             </div>
           ))}

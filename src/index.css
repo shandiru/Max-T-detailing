@@ -1,1 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
+:root {
+  --color-lab-black: #0d0d0d;
+  --color-surface-dark: #1f1f1f;
+  --color-plasma-pink: #e8196b;
+  --color-neon-rose: #ff5fa0;
+  --color-pure-white: #ffffff;
+  --color-muted-grey: #888888;
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-lab-black);
+  color: var(--color-pure-white);
+  font-family: var(--font-body);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--color-plasma-pink);
+  color: var(--color-pure-white);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-label {
+  font-family: var(--font-body);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.bg-brand-black {
+  background-color: var(--color-lab-black);
+}
+
+.bg-soft-black {
+  background-color: var(--color-surface-dark);
+}
+
+.text-brand-cream {
+  color: var(--color-pure-white);
+}
+
+.text-brand-gold,
+.text-light-gold {
+  color: var(--color-plasma-pink);
+}
+
+.text-muted-gold {
+  color: color-mix(in srgb, var(--color-muted-grey) 80%, white 20%);
+}

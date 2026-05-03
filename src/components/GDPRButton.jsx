@@ -24,27 +24,29 @@ export default function GDPRConsent() {
     <>
       {visible && (
         <div
-          className="fixed bottom-4 left-4 right-4 md:bottom-8 md:right-8 md:left-auto max-w-full md:w-[380px] p-6 bg-[#111111] border border-[#C99728]/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[9999]"
-          style={{ animation: 'slideUp 0.6s ease-out forwards' }}
+          className="fixed bottom-4 left-4 right-4 z-[9999] max-w-full border border-white/10 bg-[#111111] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] md:bottom-8 md:left-auto md:right-8 md:w-[380px]"
+          style={{ animation: "slideUp 0.6s ease-out forwards" }}
         >
-          <h4 className="font-label text-[#C99728] text-xs tracking-[0.3em] uppercase mb-4">
-            Cookie Preferences
-          </h4>
-          <p className="font-body text-[#F5EDD8]/90 text-[15px] leading-relaxed mb-6 italic">
-            We use cookies to enhance your dining experience. By clicking "Accept All", you agree to our{' '}
-            <a href="/privacy" className="text-[#C99728] underline underline-offset-4 hover:text-[#F0C060]">Privacy Policy</a>.
+          <h4 className="font-label mb-4 text-xs text-[#E8196B]">Cookie Preferences</h4>
+          <p className="font-body mb-6 text-[15px] leading-relaxed text-white/80">
+            We use cookies to improve your browsing experience and keep key site features running. By clicking "Accept
+            All", you agree to our{" "}
+            <a href="/privacy" className="text-[#E8196B] underline underline-offset-4 hover:text-[#FF5FA0]">
+              Privacy Policy
+            </a>
+            .
           </p>
 
           <div className="flex flex-col gap-3">
             <button
               onClick={() => handleAction(true)}
-              className="bg-[#C99728] text-black font-label font-bold text-[11px] tracking-[0.2em] py-3.5 uppercase hover:bg-[#F0C060] transition-all duration-300 rounded-none"
+              className="rounded-md bg-[#E8196B] py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-[#FF5FA0]"
             >
               Accept All
             </button>
             <button
               onClick={() => handleAction(false)}
-              className="border border-[#C99728]/30 text-[#F5EDD8] font-label text-[10px] tracking-[0.15em] py-2.5 uppercase hover:bg-[#C99728]/10 transition-all rounded-none"
+              className="rounded-md border border-white/10 py-2.5 text-[10px] uppercase tracking-[0.15em] text-white/80 transition-all hover:border-[#E8196B] hover:bg-[#E8196B]/10"
             >
               Reject Non-Essential
             </button>
@@ -54,11 +56,14 @@ export default function GDPRConsent() {
 
       {showIcon && !visible && (
         <button
-          onClick={() => { setVisible(true); setShowIcon(false); }}
-          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[9998] w-12 h-12 bg-[#090909] border border-[#C99728]/40 flex items-center justify-center hover:border-[#C99728] transition-all duration-500 shadow-xl group rounded-none"
+          onClick={() => {
+            setVisible(true);
+            setShowIcon(false);
+          }}
+          className="group fixed bottom-4 right-4 z-[9998] flex h-12 w-12 items-center justify-center rounded-md border border-white/10 bg-[#090909] shadow-xl transition-all duration-500 hover:border-[#E8196B] md:bottom-8 md:right-8"
         >
           <svg
-            className="w-6 h-6 text-[#C99728] group-hover:scale-110 transition-transform duration-500"
+            className="h-6 w-6 text-[#E8196B] transition-transform duration-500 group-hover:scale-110"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
