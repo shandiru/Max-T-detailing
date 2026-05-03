@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom";
 import { FaCheckCircle, FaGem, FaLayerGroup, FaMapMarkerAlt, FaShieldAlt } from "react-icons/fa";
 
+const mapsUrl = "https://maps.app.goo.gl/mEUHn2KgYKsjfx9U9";
+
 const stats = [
   { title: "Road Legal Plates", icon: <FaCheckCircle className="h-6 w-6 text-[#E8196B]" /> },
   { title: "3D & 4D Specialists", icon: <FaLayerGroup className="h-6 w-6 text-[#E8196B]" /> },
@@ -52,14 +54,19 @@ export default function HeroSection() {
             </div>
 
             <div className="grid grid-cols-1 items-start gap-4 pt-6 sm:grid-cols-2">
-              <div className="flex items-start gap-3 rounded-md border border-white/10 bg-[#1F1F1F]/80 p-4 transition hover:border-[#E8196B]/40 hover:shadow-[0_10px_25px_rgba(232,25,107,0.18)]">
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 rounded-md border border-white/10 bg-[#1F1F1F]/80 p-4 transition hover:border-[#E8196B]/40 hover:shadow-[0_10px_25px_rgba(232,25,107,0.18)]"
+              >
                 <FaMapMarkerAlt className="mt-1 h-5 w-5 flex-shrink-0 text-[#E8196B]" />
                 <div>
                   <p className="font-semibold uppercase tracking-[0.12em] text-white">Location</p>
                   <p className="text-sm text-[#888888]">Snibston Dr, Leicestershire LE67 3NQ, UK</p>
                   <p className="mt-1 text-sm text-[#FF5FA0]">DVLA Compliant (BS AU 145e)</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
