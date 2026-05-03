@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import { FaCheckCircle, FaGem, FaLayerGroup, FaMapMarkerAlt, FaShieldAlt } from "react-icons/fa";
 
 const stats = [
@@ -35,12 +36,12 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row" data-aos="fade-up">
-              <a
-                href="/build-your-plate"
+              <Link
+                to="/build-your-plate"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#E8196B] px-6 text-sm font-semibold uppercase tracking-[0.16em] text-white shadow-[0_10px_25px_rgba(232,25,107,0.28)] transition-all duration-300 hover:bg-[#FF5FA0]"
               >
                 Build Your Plate
-              </a>
+              </Link>
 
               <a
                 href="#products"
