@@ -29,10 +29,22 @@ export default function Testimonials() {
 
         <div className="mb-16 grid gap-8 md:grid-cols-2">
           <div data-aos="fade-right" className="overflow-hidden rounded-md border border-white/10 shadow-lg">
-            <img src="/after.png" alt="After service" className="h-[260px] w-full object-cover" />
+            <img
+              src="/after.png"
+              alt="After service"
+              loading="lazy"
+              decoding="async"
+              className="h-[260px] w-full object-cover"
+            />
           </div>
           <div data-aos="fade-left" data-aos-delay="120" className="overflow-hidden rounded-md border border-white/10 shadow-lg">
-            <img src="/before.png" alt="Before service" className="h-[260px] w-full object-cover" />
+            <img
+              src="/before.png"
+              alt="Before service"
+              loading="lazy"
+              decoding="async"
+              className="h-[260px] w-full object-cover"
+            />
           </div>
         </div>
 
