@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
+const mapsUrl = "https://maps.app.goo.gl/mEUHn2KgYKsjfx9U9";
+
 export default function ContactSection() {
   const [agreed, setAgreed] = useState(false);
 
@@ -145,11 +147,16 @@ export default function ContactSection() {
           <div data-aos="fade-left" data-aos-delay="120" className="lg:pt-2">
             <h3 className="mb-4 text-xl font-semibold">Contact details:</h3>
 
-            <p className="leading-relaxed text-[#888888]">
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block leading-relaxed text-[#888888] transition-colors hover:text-[#E8196B]"
+            >
               Snibston Dr,
               <br />
               Leicestershire LE67 3NQ, UK
-            </p>
+            </a>
 
             <p className="mt-4 text-[#888888]">
               <a href="tel:+447580392806" className="hover:text-[#E8196B]">

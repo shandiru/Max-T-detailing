@@ -2,6 +2,8 @@
 import { Facebook, Instagram, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const mapsUrl = "https://maps.app.goo.gl/mEUHn2KgYKsjfx9U9";
+
 export default function Footer() {
   return (
     <footer className="bg-[#0D0D0D] text-white">
@@ -46,7 +48,7 @@ export default function Footer() {
           <div className="space-y-5 pt-6 text-sm text-[#888888]">
             <div className="group flex items-start gap-3 transition-colors hover:text-white">
               <a
-                href="https://maps.google.com/?q=Snibston+Dr+Leicestershire+LE67+3NQ"
+                href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3"
