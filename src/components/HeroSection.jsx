@@ -15,7 +15,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(232,25,107,0.22),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(255,95,160,0.16),transparent_28%)]" />
       <div className="relative mx-auto max-w-7xl px-4 pb-24 pt-44 sm:px-6 lg:px-8 lg:pt-40">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="space-y-6 text-left" data-aos="fade-right">
+          <div className="space-y-6 text-left">
             <div className="inline-flex items-center gap-3 rounded-md border border-white/10 bg-[#1F1F1F] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#888888]">
               <span>DVLA Registered</span>
               <span className="h-1.5 w-1.5 rounded-full bg-[#E8196B]" />
@@ -35,7 +35,7 @@ export default function HeroSection() {
               Premium UK plates with ceramic-coated protection and a sharp dark-first identity.
             </p>
 
-            <div className="flex flex-col gap-4 sm:flex-row" data-aos="fade-up">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 to="/build-your-plate"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#E8196B] px-6 text-sm font-semibold uppercase tracking-[0.16em] text-white shadow-[0_10px_25px_rgba(232,25,107,0.28)] transition-all duration-300 hover:bg-[#FF5FA0]"
@@ -51,7 +51,7 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="grid grid-cols-1 items-start gap-4 pt-6 sm:grid-cols-2" data-aos="zoom-in">
+            <div className="grid grid-cols-1 items-start gap-4 pt-6 sm:grid-cols-2">
               <div className="flex items-start gap-3 rounded-md border border-white/10 bg-[#1F1F1F]/80 p-4 transition hover:border-[#E8196B]/40 hover:shadow-[0_10px_25px_rgba(232,25,107,0.18)]">
                 <FaMapMarkerAlt className="mt-1 h-5 w-5 flex-shrink-0 text-[#E8196B]" />
                 <div>
@@ -63,7 +63,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="relative w-full" data-aos="fade-left">
+          <div className="relative w-full">
             <div className="absolute -inset-4 rounded-md bg-[linear-gradient(135deg,rgba(232,25,107,0.22),transparent_55%)] blur-2xl" />
             <div className="relative aspect-video w-full overflow-hidden rounded-md border border-white/10 shadow-2xl transition-all duration-300 hover:shadow-[0_12px_30px_rgba(232,25,107,0.3)] sm:aspect-[4/3]">
               <img

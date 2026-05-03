@@ -6,10 +6,15 @@ export default function AboutSection() {
         <img
           src="/about.png"
           alt="UK Plate Lab"
+          data-aos="fade-right"
           className="h-[400px] w-full max-w-[900px] object-cover object-top md:h-[500px] lg:h-[600px]"
         />
 
-        <div className="mt-6 w-full bg-[#1F1F1F] p-10 text-white shadow-xl md:p-12 lg:absolute lg:right-0 lg:top-1/2 lg:mt-0 lg:w-[50%] lg:-translate-y-1/2 lg:p-16">
+        <div
+          data-aos="fade-left"
+          data-aos-delay="120"
+          className="mt-6 w-full bg-[#1F1F1F] p-10 text-white shadow-xl md:p-12 lg:absolute lg:right-0 lg:top-1/2 lg:mt-0 lg:w-[50%] lg:-translate-y-1/2 lg:p-16"
+        >
           <div className="absolute left-0 top-0 hidden h-full w-[6px] bg-[#E8196B] lg:block" />
 
           <div className="lg:ml-6">
@@ -30,17 +35,17 @@ export default function AboutSection() {
             </p>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-              <div className="rounded-md border border-white/10 bg-[#0D0D0D] py-6 text-center transition hover:-translate-y-1">
+              <div data-aos="zoom-in" data-aos-delay="180" className="rounded-md border border-white/10 bg-[#0D0D0D] py-6 text-center transition hover:-translate-y-1">
                 <h3 className="text-2xl font-bold text-[#E8196B]">10K+</h3>
                 <p className="mt-1 text-sm uppercase tracking-[0.16em] text-[#888888]">Happy Customers</p>
               </div>
 
-              <div className="rounded-md border border-white/10 bg-[#0D0D0D] py-6 text-center transition hover:-translate-y-1">
+              <div data-aos="zoom-in" data-aos-delay="240" className="rounded-md border border-white/10 bg-[#0D0D0D] py-6 text-center transition hover:-translate-y-1">
                 <h3 className="text-2xl font-bold text-[#E8196B]">14y</h3>
                 <p className="mt-1 text-sm uppercase tracking-[0.16em] text-[#888888]">In Business</p>
               </div>
 
-              <div className="rounded-md border border-white/10 bg-[#0D0D0D] py-6 text-center transition hover:-translate-y-1">
+              <div data-aos="zoom-in" data-aos-delay="300" className="rounded-md border border-white/10 bg-[#0D0D0D] py-6 text-center transition hover:-translate-y-1">
                 <h3 className="text-2xl font-bold text-[#E8196B]">48h</h3>
                 <p className="mt-1 text-sm uppercase tracking-[0.16em] text-[#888888]">Average Delivery</p>
               </div>

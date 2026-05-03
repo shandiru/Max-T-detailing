@@ -62,7 +62,7 @@ export default function PlateTypes() {
   return (
     <section className="bg-[#0D0D0D] px-4 py-16 text-white sm:px-6 lg:px-8" id="products">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8 text-center">
+        <div className="mb-8 text-center" data-aos="fade-up">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">Product range</p>
           <h2 className="mb-3 text-4xl font-bold uppercase sm:text-5xl">Our Plate Types</h2>
           <p className="mx-auto max-w-2xl text-sm text-[#888888] sm:text-base">
@@ -70,7 +70,7 @@ export default function PlateTypes() {
           </p>
         </div>
 
-        <div className="mb-8 flex flex-wrap justify-center gap-3">
+        <div className="mb-8 flex flex-wrap justify-center gap-3" data-aos="fade-up" data-aos-delay="80">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -87,9 +87,11 @@ export default function PlateTypes() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {filteredProducts.map((product) => (
+          {filteredProducts.map((product, index) => (
             <div
               key={product.title}
+              data-aos="zoom-in-up"
+              data-aos-delay={100 + index * 60}
               className="overflow-hidden rounded-md border border-white/10 bg-[#1F1F1F] shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:border-[#E8196B]/40"
             >
               <img src={product.image} alt={product.title} className="h-56 w-full object-cover" />

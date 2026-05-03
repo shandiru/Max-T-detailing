@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
   return (
     <section id="why" className="bg-[#0D0D0D] px-6 py-24 text-white md:px-12">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-14">
+        <div className="mb-14" data-aos="fade-up">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">
             Built around confidence and compliance
           </p>
@@ -49,8 +49,13 @@ export default function WhyChooseUs() {
         </div>
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-          {reasons.map((item) => (
-            <div key={item.title} className="flex items-start gap-4 rounded-md border border-white/10 bg-[#1F1F1F] p-6">
+          {reasons.map((item, index) => (
+            <div
+              key={item.title}
+              data-aos="fade-up"
+              data-aos-delay={80 + index * 40}
+              className="flex items-start gap-4 rounded-md border border-white/10 bg-[#1F1F1F] p-6"
+            >
               <div className="mt-1 text-2xl text-[#E8196B]">{item.icon}</div>
               <div>
                 <h3 className="text-lg font-semibold uppercase tracking-[0.12em]">{item.title}</h3>
