@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const testimonials = [
   {
@@ -29,10 +29,10 @@ export default function Testimonials() {
 
         <div className="mb-16 grid gap-8 md:grid-cols-2">
           <div className="overflow-hidden rounded-md border border-white/10 shadow-lg">
-            <img src="/after.jpg" alt="After service" className="h-[260px] w-full object-cover" />
+            <img src="/after.png" alt="After service" className="h-[260px] w-full object-cover" />
           </div>
           <div className="overflow-hidden rounded-md border border-white/10 shadow-lg">
-            <img src="/before.jpg" alt="Before service" className="h-[260px] w-full object-cover" />
+            <img src="/before.png" alt="Before service" className="h-[260px] w-full object-cover" />
           </div>
         </div>
 

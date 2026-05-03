@@ -1,12 +1,10 @@
-"use client";
-import React from "react";
 
 export default function AboutSection() {
   return (
     <section className="relative w-full bg-[#0D0D0D] py-20" id="about">
       <div className="relative mx-auto max-w-7xl">
         <img
-          src="/newheros.jpeg"
+          src="/about.png"
           alt="UK Plate Lab"
           className="h-[400px] w-full max-w-[900px] object-cover object-top md:h-[500px] lg:h-[600px]"
         />
