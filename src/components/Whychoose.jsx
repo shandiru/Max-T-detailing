@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaCheckCircle, FaClipboardCheck, FaClock, FaGem, FaHandshake, FaShieldAlt } from "react-icons/fa";
 
 const reasons = [

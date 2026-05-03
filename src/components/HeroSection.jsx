@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaCheckCircle, FaGem, FaLayerGroup, FaMapMarkerAlt, FaShieldAlt } from "react-icons/fa";
 
 const stats = [

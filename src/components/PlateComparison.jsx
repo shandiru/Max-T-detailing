@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaCheck, FaExclamationTriangle } from "react-icons/fa";
 
 export default function PlateComparison() {
