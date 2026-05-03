@@ -66,7 +66,7 @@ export default function HeroSection() {
             <div className="absolute -inset-4 rounded-md bg-[linear-gradient(135deg,rgba(232,25,107,0.22),transparent_55%)] blur-2xl" />
             <div className="relative aspect-video w-full overflow-hidden rounded-md border border-white/10 shadow-2xl transition-all duration-300 hover:shadow-[0_12px_30px_rgba(232,25,107,0.3)] sm:aspect-[4/3]">
               <img
-                src="/newhero.jpg"
+                src="/hero.png"
                 alt="Custom UK number plates"
                 className="absolute inset-0 h-full w-full object-cover"
               />

@@ -7,8 +7,8 @@ export default function ContactSection() {
   return (
     <section id="contact" className="relative bg-[#0D0D0D] px-6 py-24 text-white md:px-12 lg:px-20">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{ backgroundImage: "url('/contact-bg.webp')" }}
+        className="absolute inset-0 bg-cover bg-center opacity-90"
+        style={{ backgroundImage: "url('/bg.png')" }}
       />
       <div className="absolute inset-0 bg-[#0D0D0D]/85" />
 
