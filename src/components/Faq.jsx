@@ -30,17 +30,24 @@ export default function FAQ() {
   return (
     <section className="bg-[#0D0D0D] px-6 py-24 text-white md:px-12 lg:px-20">
       <div className="mx-auto max-w-7xl">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">Need help?</p>
-        <h2 className="mb-20 max-w-3xl text-5xl uppercase leading-[0.9] md:text-6xl lg:text-7xl">
-          Frequently Asked <br /> Questions
-        </h2>
+        <div data-aos="fade-up">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">Need help?</p>
+          <h2 className="mb-20 max-w-3xl text-5xl uppercase leading-[0.9] md:text-6xl lg:text-7xl">
+            Frequently Asked <br /> Questions
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {faqs.map((item, index) => {
             const isOpen = activeIndex === index;
 
             return (
-              <div key={item.q} className="rounded-md border border-white/10 bg-[#1F1F1F]">
+              <div
+                key={item.q}
+                data-aos="fade-up"
+                data-aos-delay={80 + index * 40}
+                className="rounded-md border border-white/10 bg-[#1F1F1F]"
+              >
                 <button
                   onClick={() => setActiveIndex(isOpen ? null : index)}
                   className="flex min-h-[88px] w-full items-center justify-between gap-6 px-7 text-left md:px-8"

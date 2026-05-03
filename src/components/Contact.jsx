@@ -40,12 +40,12 @@ export default function ContactSection() {
       <div className="absolute inset-0 bg-[#0D0D0D]/85" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <h2 className="mb-14 text-4xl font-bold uppercase md:text-5xl">
+        <h2 className="mb-14 text-4xl font-bold uppercase md:text-5xl" data-aos="fade-up">
           Contact <span className="text-[#E8196B]">Us</span>
         </h2>
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-          <div className="rounded-md border border-white/10 bg-[#1F1F1F]/95 p-8 shadow-xl">
+          <div data-aos="fade-right" className="rounded-md border border-white/10 bg-[#1F1F1F]/95 p-8 shadow-xl">
             <h3 className="mb-6 text-xl font-semibold">Send us a WhatsApp message:</h3>
 
             <form className="space-y-4" onSubmit={handleSubmit}>
@@ -142,7 +142,7 @@ export default function ContactSection() {
             </form>
           </div>
 
-          <div className="lg:pt-2">
+          <div data-aos="fade-left" data-aos-delay="120" className="lg:pt-2">
             <h3 className="mb-4 text-xl font-semibold">Contact details:</h3>
 
             <p className="leading-relaxed text-[#888888]">

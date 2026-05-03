@@ -5,13 +5,15 @@ export default function PlateComparison() {
   return (
     <section className="bg-[#0D0D0D] px-6 py-20 text-white">
       <div className="mx-auto max-w-6xl">
-        <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">
-          Choose the right fit
-        </p>
-        <h2 className="mb-16 text-center text-4xl font-bold uppercase md:text-5xl">Road Legal vs Show Plates</h2>
+        <div data-aos="fade-up">
+          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.24em] text-[#E8196B]">
+            Choose the right fit
+          </p>
+          <h2 className="mb-16 text-center text-4xl font-bold uppercase md:text-5xl">Road Legal vs Show Plates</h2>
+        </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="rounded-md border border-[#E8196B] bg-[#1F1F1F] p-8">
+          <div data-aos="fade-right" className="rounded-md border border-[#E8196B] bg-[#1F1F1F] p-8">
             <div className="mb-6 flex items-center gap-3">
               <FaCheck className="text-xl text-[#E8196B]" />
               <h3 className="text-xl font-semibold uppercase tracking-[0.1em] text-[#E8196B]">Road Legal Plates</h3>
@@ -39,7 +41,7 @@ export default function PlateComparison() {
             </ul>
           </div>
 
-          <div className="rounded-md border border-white/10 bg-[#1F1F1F] p-8">
+          <div data-aos="fade-left" data-aos-delay="120" className="rounded-md border border-white/10 bg-[#1F1F1F] p-8">
             <div className="mb-6 flex items-center gap-3">
               <FaExclamationTriangle className="text-xl text-[#FF5FA0]" />
               <h3 className="text-xl font-semibold uppercase tracking-[0.1em]">Show Plates</h3>
