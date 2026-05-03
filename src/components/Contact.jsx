@@ -4,6 +4,33 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 export default function ContactSection() {
   const [agreed, setAgreed] = useState(false);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const firstName = formData.get("firstName")?.toString().trim();
+    const lastName = formData.get("lastName")?.toString().trim();
+    const email = formData.get("email")?.toString().trim();
+    const phone = formData.get("phone")?.toString().trim();
+    const subject = formData.get("subject")?.toString().trim();
+    const registration = formData.get("registration")?.toString().trim();
+    const message = formData.get("message")?.toString().trim();
+
+    const whatsappMessage = [
+      "Hello UK Plate Lab,",
+      firstName || lastName ? `Name: ${[firstName, lastName].filter(Boolean).join(" ")}` : null,
+      email ? `Email: ${email}` : null,
+      phone ? `Phone: ${phone}` : null,
+      subject ? `Subject: ${subject}` : null,
+      registration ? `Registration: ${registration}` : null,
+      message ? `Message: ${message}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.open(`https://wa.me/447580392806?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
+  };
+
   return (
     <section id="contact" className="relative bg-[#0D0D0D] px-6 py-24 text-white md:px-12 lg:px-20">
       <div
@@ -21,11 +48,12 @@ export default function ContactSection() {
           <div className="rounded-md border border-white/10 bg-[#1F1F1F]/95 p-8 shadow-xl">
             <h3 className="mb-6 text-xl font-semibold">Send us a WhatsApp message:</h3>
 
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
                   <label className="text-sm text-[#888888]">First Name</label>
                   <input
+                    name="firstName"
                     className="w-full rounded-md border border-white/10 bg-[#0D0D0D] px-3 py-2 text-sm focus:border-[#E8196B] focus:outline-none"
                     type="text"
                   />
@@ -34,6 +62,7 @@ export default function ContactSection() {
                 <div>
                   <label className="text-sm text-[#888888]">Last Name</label>
                   <input
+                    name="lastName"
                     className="w-full rounded-md border border-white/10 bg-[#0D0D0D] px-3 py-2 text-sm focus:border-[#E8196B] focus:outline-none"
                     type="text"
                   />
@@ -43,6 +72,7 @@ export default function ContactSection() {
               <div>
                 <label className="text-sm text-[#888888]">Email Address</label>
                 <input
+                  name="email"
                   className="w-full rounded-md border border-white/10 bg-[#0D0D0D] px-3 py-2 text-sm focus:border-[#E8196B] focus:outline-none"
                   type="email"
                 />
@@ -51,6 +81,7 @@ export default function ContactSection() {
               <div>
                 <label className="text-sm text-[#888888]">Phone Number</label>
                 <input
+                  name="phone"
                   className="w-full rounded-md border border-white/10 bg-[#0D0D0D] px-3 py-2 text-sm focus:border-[#E8196B] focus:outline-none"
                   type="tel"
                 />
@@ -58,7 +89,10 @@ export default function ContactSection() {
 
               <div>
                 <label className="text-sm text-[#888888]">Subject / Enquiry Type</label>
-                <select className="w-full rounded-md border border-white/10 bg-[#0D0D0D] px-3 py-2 text-sm focus:border-[#E8196B] focus:outline-none">
+                <select
+                  name="subject"
+                  className="w-full rounded-md border border-white/10 bg-[#0D0D0D] px-3 py-2 text-sm focus:border-[#E8196B] focus:outline-none"
+                >
                   <option>Place an Order</option>
                   <option>Order Update / Tracking</option>
                   <option>Document Submission Query</option>
@@ -72,6 +106,7 @@ export default function ContactSection() {
                   Registration Number <span className="text-[#888888]/70">(optional)</span>
                 </label>
                 <input
+                  name="registration"
                   placeholder="AB12 XYZ"
                   className="w-full rounded-md border border-white/10 bg-[#0D0D0D] px-3 py-2 text-sm focus:border-[#E8196B] focus:outline-none"
                   type="text"
@@ -81,6 +116,7 @@ export default function ContactSection() {
               <div>
                 <label className="text-sm text-[#888888]">Message</label>
                 <textarea
+                  name="message"
                   rows="5"
                   className="w-full rounded-md border border-white/10 bg-[#0D0D0D] px-3 py-2 text-sm focus:border-[#E8196B] focus:outline-none"
                 />

@@ -94,7 +94,9 @@ export default function Header() {
                 <p className="truncate font-display text-xl uppercase leading-none tracking-[0.06em] text-white xl:text-2xl">
                   UK Plate Lab
                 </p>
-               
+                <p className="truncate text-[10px] uppercase tracking-[0.18em] text-[#888888] xl:text-[11px] xl:tracking-[0.22em]">
+                  Custom Road Legal &amp; Show Plates
+                </p>
               </div>
             </Link>
 
