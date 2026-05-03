@@ -69,6 +69,8 @@ export default function HeroSection() {
               <img
                 src="/hero.png"
                 alt="Custom UK number plates"
+                loading="eager"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>

@@ -88,6 +88,8 @@ export default function Header() {
               <img
                 src="/logo.png"
                 alt="UK Plate Lab"
+                loading="eager"
+                decoding="async"
                 className="h-14 w-auto shrink-0 rounded-md border border-white/10 bg-[#1F1F1F] p-2"
               />
               <div className="hidden min-w-0 lg:block">

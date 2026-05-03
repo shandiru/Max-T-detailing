@@ -94,7 +94,13 @@ export default function PlateTypes() {
               data-aos-delay={100 + index * 60}
               className="overflow-hidden rounded-md border border-white/10 bg-[#1F1F1F] shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:border-[#E8196B]/40"
             >
-              <img src={product.image} alt={product.title} className="h-56 w-full object-cover" />
+              <img
+                src={product.image}
+                alt={product.title}
+                loading="lazy"
+                decoding="async"
+                className="h-56 w-full object-cover"
+              />
 
               <div className="p-5">
                 <h3 className="mb-2 text-lg font-bold text-white">{product.title}</h3>

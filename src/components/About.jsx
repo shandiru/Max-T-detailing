@@ -6,6 +6,8 @@ export default function AboutSection() {
         <img
           src="/about.png"
           alt="UK Plate Lab"
+          loading="lazy"
+          decoding="async"
           data-aos="fade-right"
           className="h-[400px] w-full max-w-[900px] object-cover object-top md:h-[500px] lg:h-[600px]"
         />
