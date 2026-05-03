@@ -41,14 +41,14 @@ const products = [
     desc: "Pair of custom show plates for exhibitions, display builds, and off-road vehicles.",
     price: "£30.00",
     category: ["All Plates", "Show Plates"],
-    image: "/images/show-plates-set.jpg",
+    image: "/Show_Plates_Set.jpeg",
   },
   {
     title: "Show Plate - Single",
     desc: "Single custom show plate for display, photo shoots, or events.",
     price: "£15.00",
     category: ["All Plates", "Show Plates", "Single Plates"],
-    image: "/images/show-plate-single.jpg",
+    image: "/Show_Plates_Set.jpeg",
   },
 ];
 
