@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 const mapsUrl = "https://maps.app.goo.gl/mEUHn2KgYKsjfx9U9";
 
@@ -165,10 +165,12 @@ export default function ContactSection() {
             </p>
 
             <div className="mt-6 flex items-center gap-4 text-xl">
-              <a href="https://facebook.com/UKPlateLab" className="hover:text-[#E8196B]">
-                <FaFacebookF />
-              </a>
-              <a href="https://instagram.com/ukplatelab" className="hover:text-[#E8196B]">
+              <a
+                href="https://www.instagram.com/ukplatelab?igsh=cXgwODhxcXY0a3dl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#E8196B]"
+              >
                 <FaInstagram />
               </a>
             </div>

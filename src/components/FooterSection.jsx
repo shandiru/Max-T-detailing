@@ -1,5 +1,5 @@
 
-import { Facebook, Instagram, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const mapsUrl = "https://maps.app.goo.gl/mEUHn2KgYKsjfx9U9";
@@ -87,15 +87,7 @@ export default function Footer() {
 
           <div className="mb-8 flex gap-4 pt-6">
             <a
-              href="https://www.facebook.com/UKPlateLab/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-11 w-11 items-center justify-center rounded-md border border-white/10 text-[#888888] transition-all duration-300 hover:border-[#E8196B] hover:bg-[#E8196B]/10 hover:text-white"
-            >
-              <Facebook size={20} />
-            </a>
-            <a
-              href="https://www.instagram.com/ukplatelab/"
+              href="https://www.instagram.com/ukplatelab?igsh=cXgwODhxcXY0a3dl"
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-11 w-11 items-center justify-center rounded-md border border-white/10 text-[#888888] transition-all duration-300 hover:border-[#E8196B] hover:bg-[#E8196B]/10 hover:text-white"
