@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection"
 import ReviewsSection from "../components/Review"
 import PlateTypes from "../components/PlateTypes"
 import AboutSection from "../components/About"
+import GalleryCarousel from "../components/GalleryCarousel"
 import WhyChooseUs from "../components/Whychoose"
 import HowItWorks from "../components/HowItWorks"
 import PlateComparison from "../components/PlateComparison"
@@ -15,6 +16,7 @@ const Home = () => {
             <HeroSection />
             <PlateTypes />
             <AboutSection />
+            <GalleryCarousel />
             <WhyChooseUs />
             <HowItWorks />
             <PlateComparison />
