@@ -1,9 +1,40 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const galleryImages = Array.from({ length: 14 }, (_, index) => ({
-  src: `/max${index + 1}.webp`,
-  alt: `UK Plate Lab gallery image ${index + 1}`,
+const galleryImageFiles = [
+  "MT-2.webp",
+  "MT-3.webp",
+  "MT-5.webp",
+  "MT-6.webp",
+  "MT-7.webp",
+  "MT-8.webp",
+  "MT-9.webp",
+  "MT-10.webp",
+  "MT-11.webp",
+  "MT-12.webp",
+  "MT-13.webp",
+  "MT-14.webp",
+  "MT-15.webp",
+  "MT-16.webp",
+  "MT-17.webp",
+  "MT-18.webp",
+  "MT-19.webp",
+  "MT-20.webp",
+  "MT-21.webp",
+  "MT-22.webp",
+  "MT-23.webp",
+  "MT-24.webp",
+  "MT-25.webp",
+  "MT-26.webp",
+  "MT-27.webp",
+  "MT-28.webp",
+  "MT-29.webp",
+  "MT-30.webp",
+];
+
+const galleryImages = galleryImageFiles.map((fileName, index) => ({
+  src: `/${fileName}`,
+  alt: `Max T Detailing gallery image ${index + 1}`,
 }));
 
 export default function GalleryCarousel() {
@@ -42,18 +73,24 @@ export default function GalleryCarousel() {
           data-aos-delay="100"
         >
           <div className="relative">
+            <div
+              className="pointer-events-none absolute inset-0 scale-110 bg-cover bg-center bg-no-repeat blur-2xl"
+              style={{ backgroundImage: `url(${galleryImages[activeIndex].src})` }}
+              aria-hidden="true"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-black/35" aria-hidden="true" />
             <img
               src={galleryImages[activeIndex].src}
               alt={galleryImages[activeIndex].alt}
               loading="lazy"
               decoding="async"
-              className="h-[280px] w-full object-cover sm:h-[420px] lg:h-[560px]"
+              className="relative z-10 h-[280px] w-full object-contain sm:h-[420px] lg:h-[560px]"
             />
 
             <button
               type="button"
               onClick={showPrevious}
-              className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-white transition hover:border-[#E8196B] hover:bg-[#E8196B]"
+              className="absolute left-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-white transition hover:border-[#E8196B] hover:bg-[#E8196B]"
               aria-label="Previous gallery image"
             >
               <ChevronLeft size={20} />
@@ -62,7 +99,7 @@ export default function GalleryCarousel() {
             <button
               type="button"
               onClick={showNext}
-              className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-white transition hover:border-[#E8196B] hover:bg-[#E8196B]"
+              className="absolute right-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-white transition hover:border-[#E8196B] hover:bg-[#E8196B]"
               aria-label="Next gallery image"
             >
               <ChevronRight size={20} />
@@ -102,7 +139,7 @@ export default function GalleryCarousel() {
                     alt={image.alt}
                     loading="lazy"
                     decoding="async"
-                    className="aspect-square h-full w-full object-cover"
+                    className="aspect-square h-full w-full bg-[#0D0D0D] object-contain"
                   />
                 </button>
               ))}
